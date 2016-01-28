@@ -1,16 +1,28 @@
-(setq package-archives '(("marmalade" . "https://marmalade-repo.org/packages/") ("gnu" . "https://elpa.gnu.org/packages/")))
+
+;; Added by Package.el.  This must come before configurations of
+;; installed packages.  Don't delete this line.  If you don't want it,
+;; just comment it out by adding a semicolon to the start of the line.
+;; You may delete these explanatory comments.
+(load-library "url-handlers")
+
+(package-initialize)
+
+(setq package-archives '(("marmalade" . "https://marmalade-repo.org/packages/") ("gnu" . "https://elpa.gnu.org/packages/")("melpa" . "https://melpa.org/packages/")))
+
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(inhibit-startup-screen t))
+ '(inhibit-startup-screen t)
+ '(package-selected-packages (quote (magit cider))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  )
+
 (add-to-list 'load-path "~/.emacs.d/libs")
 (load "paredit")
 
@@ -31,7 +43,15 @@
 
 (global-set-key (kbd "C-;") 'goto-line)
 
+(global-set-key (kbd "C-c d") 'paredit-forward-slurp-sexp)
+(global-set-key (kbd "C-c s") 'paredit-forward-barf-sexp)
 
+;;Fixing access over SSH
+
+(global-set-key "\M-[1;5C"    'forward-word)      ; Ctrl+right   => forward word
+(global-set-key "\M-[1;5D"    'backward-word)     ; Ctrl+left    => backward word
+
+;;best theme
 (load-theme 'wombat)
 
 (add-hook 'dired-load-hook '(lambda () (require 'dired-x)))
