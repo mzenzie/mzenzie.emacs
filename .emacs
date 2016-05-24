@@ -7,7 +7,7 @@
 
 (package-initialize)
 
-(setq package-archives '(("marmalade" . "https://marmalade-repo.org/packages/") ("gnu" . "https://elpa.gnu.org/packages/")("melpa" . "https://melpa.org/packages/")))
+(setq package-archives '(("marmalade" . "http://marmalade-repo.org/packages/") ("gnu" . "http://elpa.gnu.org/packages/")("melpa" . "http://melpa.org/packages/")))
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
@@ -36,6 +36,8 @@
 (add-hook 'clojure-mode-hook          #'enable-paredit-mode)
 
 (show-paren-mode 1)
+(setq column-number-mode t)
+
 
 (global-set-key (kbd "C-c i") 'cider-eval-last-sexp)
 (global-set-key (kbd "C-c y") 'cider-eval-buffer)
@@ -60,11 +62,13 @@
 (setq dired-omit-files (concat dired-omit-files "\\|^\\..+$\\|\\.class$"))
 
 
-(setq dired-listing-switches "-lR")
+(setq dired-listing-switches "-lsR")
 
 (setq scroll-conservatively 100000)
 (setq auto-window-vscroll nil)
 (setq scroll-preserve-screen-position "t")
 (setq focus-follows-mouse "t")
+
+
 
 (add-hook 'before-save-hook 'delete-trailing-whitespace)
