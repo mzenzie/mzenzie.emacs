@@ -45,6 +45,8 @@
 
 (global-set-key (kbd "C-;") 'goto-line)
 
+(global-set-key (kbd "C-c DEL") 'delete-region)
+
 (global-set-key (kbd "C-c d") 'paredit-forward-slurp-sexp)
 (global-set-key (kbd "C-c s") 'paredit-forward-barf-sexp)
 
