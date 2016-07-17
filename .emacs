@@ -72,6 +72,8 @@
 (setq scroll-preserve-screen-position "t")
 (setq focus-follows-mouse "t")
 
+(setq tab-width 4)
+
 (setq
    backup-by-copying t      ; don't clobber symlinks
    backup-directory-alist
