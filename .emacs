@@ -84,3 +84,5 @@
    version-control t)       ; use versioned backups
 
 (add-hook 'before-save-hook 'delete-trailing-whitespace)
+
+(setq column-number-mode "t")
