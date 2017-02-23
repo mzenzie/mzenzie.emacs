@@ -83,6 +83,12 @@
    kept-old-versions 2
    version-control t)       ; use versioned backups
 
+(defun kill-other-buffers ()
+   "Kill all other buffers."
+   (interactive)
+   (mapc 'kill-buffer (delq (current-buffer) (buffer-list))))
+(global-set-key (kbd "C-c 1") 'kill-other-buffers)
+
 (add-hook 'before-save-hook 'delete-trailing-whitespace)
 
 (setq column-number-mode "t")
