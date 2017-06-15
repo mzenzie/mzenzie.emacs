@@ -33,10 +33,13 @@
     (eval-print-last-sexp)))
 
 (add-to-list 'el-get-recipe-path "~/.emacs.d/el-get-user/recipes")
-(el-get 'sync)
 
-(add-to-list 'load-path "~/.emacs.d/libs")
-(load "paredit")
+(el-get-bundle paredit)
+(el-get-bundle jedi)
+(el-get-bundle magit)
+
+
+
 
 (autoload 'enable-paredit-mode "paredit" "Turn on pseudo-structural editing of Lisp code." t)
 (add-hook 'emacs-lisp-mode-hook       #'enable-paredit-mode)
@@ -86,8 +89,12 @@
 
 (setq tab-width 4)
 
+;Create directory for back-ups
+(unless (file-exists-p "~/.saves") (make-directory "~/.saves"))
+
 (setq
    backup-by-copying t      ; don't clobber symlinks
+
    backup-directory-alist
     '(("." . "~/.saves"))    ; don't litter my fs tree
    delete-old-versions t
