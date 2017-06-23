@@ -35,9 +35,6 @@
 
 (el-get-bundle paredit)
 (el-get-bundle jedi)
-(el-get-bundle magit)
-
-
 
 
 (autoload 'enable-paredit-mode "paredit" "Turn on pseudo-structural editing of Lisp code." t)
