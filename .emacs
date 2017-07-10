@@ -10,7 +10,8 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(inhibit-startup-screen t))
+ '(inhibit-startup-screen t)
+ '(package-selected-packages (quote (jedi paredit magit))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -44,7 +45,7 @@
 ; activate all the packages (in particular autoloads)
 (package-initialize)
 
-; fetch the list of packages available 
+; fetch the list of packages available
 (unless package-archive-contents
   (package-refresh-contents))
 
@@ -121,6 +122,13 @@
    (interactive)
    (mapc 'kill-buffer (delq (current-buffer) (buffer-list))))
 (global-set-key (kbd "C-c 1") 'kill-other-buffers)
+
+(defun four-space ()
+  "print four spaces"
+  (interactive)
+  (insert "    "))
+
+(global-set-key (kbd "C-c SPC") 'four-space)
 
 (add-hook 'before-save-hook 'delete-trailing-whitespace)
 
