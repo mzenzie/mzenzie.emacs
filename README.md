@@ -1,3 +1,3 @@
 # mzenzie.emacs
 
-Copy .emacs and .save folder to the home directory, copy libs to .emacs.d/
+Clone the repository, then run bash install.sh to install everything
