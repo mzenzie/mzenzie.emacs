@@ -134,3 +134,5 @@
 (add-hook 'before-save-hook 'delete-trailing-whitespace)
 
 (setq column-number-mode "t")
+(setq c-default-style "linux"
+          c-basic-offset 4)
