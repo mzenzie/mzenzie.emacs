@@ -136,3 +136,7 @@
 (setq column-number-mode "t")
 (setq c-default-style "linux"
           c-basic-offset 4)
+
+(setq-default indent-tabs-mode nil)
+(setq whitespace-style '(trailing tabs newline tab-mark newline-mark))
+(global-whitespace-mode 1)
