@@ -97,7 +97,6 @@
 (setq dired-listing-switches "-lsR")
 (setq-default ediff-forward-word-function 'forward-char)
 
-(setq next-line-add-newlines t)
 (setq scroll-conservatively 100000)
 (setq auto-window-vscroll nil)
 (setq scroll-preserve-screen-position "t")
