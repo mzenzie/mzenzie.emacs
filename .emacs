@@ -140,3 +140,4 @@
 (global-whitespace-mode 1)
 
 (which-func-mode 1)
+(defalias 'yes-or-no-p 'y-or-n-p)
