@@ -141,3 +141,6 @@
 
 (which-func-mode 1)
 (defalias 'yes-or-no-p 'y-or-n-p)
+
+(fset 'python-send-func
+   "\C-[\C-h\C-[xpython shell send region\C-m\C-u\C-@\C-u\C-@")
