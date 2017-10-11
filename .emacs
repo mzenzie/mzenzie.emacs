@@ -18,6 +18,8 @@
  ;; If there is more than one, they won't work right.                                                                                                                               
  '(which-func ((t (:foreground "#00ff6e")))))    
 
+(setq initial-buffer-choice ".")
+ 
 (add-to-list 'load-path "~/.emacs.d/el-get/el-get")
 
 (unless (require 'el-get nil 'noerror)
