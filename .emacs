@@ -148,3 +148,8 @@
    "\C-[\C-h\C-[xpython shell send region\C-m\C-u\C-@\C-u\C-@")
  
  (setq sgml-basic-offset 4)
+
+ (add-hook 'emacs-lisp-mode-hook
+  (function (lambda ()
+   (add-hook 'local-write-file-hooks 
+    'check-parens))))
